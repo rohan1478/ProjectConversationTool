@@ -19,6 +19,10 @@ gem "jbuilder"
 
 gem "tailwindcss-ruby"
 gem "tailwindcss-rails"
+gem "font-awesome-sass", "~> 6.0.0"
+
+gem "devise"
+
 
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
 # gem "bcrypt", "~> 3.1.7"
@@ -52,6 +56,8 @@ group :development, :test do
 
   # Omakase Ruby styling [https://github.com/rails/rubocop-rails-omakase/]
   gem "rubocop-rails-omakase", require: false
+
+  gem "rspec-rails"
 end
 
 group :development do
