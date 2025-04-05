@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="mobile-web-app-capable" content="yes">
+    <%= tag.link rel: "stylesheet", href: "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css", integrity: "sha512-...", crossorigin: "anonymous", referrerpolicy: "no-referrer" %>
+
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
 
@@ -22,7 +24,10 @@
   </head>
 
   <body>
-    <main class="container mx-auto mt-28 px-10 flex">
+    <main class='bg-indigo-25 min-h-screen'>
+       <p class="notice"><%= notice %></p>
+       <p class="alert"><%= alert %></p>
+    <%= render 'shared/navbar' %>
       <%= yield %>
     </main>
   </body>

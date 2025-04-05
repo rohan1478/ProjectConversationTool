@@ -1,0 +1,17 @@
+<%= form_with(model: @project, local: true) do |form| %>
+    <%= form.fields_for :project_events, @project.project_events.build(event_type: "comment") do |event_form| %>
+      <div class="mt-6 bg-white p-6 rounded-lg shadow">
+        <h3 class="text-xl font-semibold text-gray-800 mb-4">Leave a Comment</h3>
+  
+        <div class="mb-4">
+          <%= event_form.label :content, "Your Comment", class: "block text-sm font-medium text-gray-700" %>
+          <%= event_form.text_area :content, rows: 4, placeholder: "Write something...", class: "mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500" %>
+          <%= event_form.hidden_field :event_type, value: "comment" %>
+          <%= event_form.hidden_field :user_id, value: current_user.id %>
+
+        </div>
+  
+        <%= form.submit "Post Comment", class: "inline-flex items-center px-4 py-2 bg-indigo-600 text-white text-sm font-medium rounded-md hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500" %>
+      </div>
+    <% end %>
+  <% end %>
