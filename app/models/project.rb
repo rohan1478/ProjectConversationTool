@@ -3,5 +3,4 @@ class Project < ApplicationRecord
     enum :status, { pending: 0, in_progress: 1, completed: 2 }
 
     accepts_nested_attributes_for :project_events, allow_destroy: false, reject_if: :all_blank
-  end
-  
+end

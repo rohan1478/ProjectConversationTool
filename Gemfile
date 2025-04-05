@@ -21,7 +21,7 @@ gem "tailwindcss-ruby"
 gem "tailwindcss-rails"
 gem "font-awesome-sass", "~> 6.0.0"
 
-gem 'devise'
+gem "devise"
 
 
 # Use Active Model has_secure_password [https://guides.rubyonrails.org/active_model_basics.html#securepassword]
