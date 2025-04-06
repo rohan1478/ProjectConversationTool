@@ -6,6 +6,7 @@ databases:
 
 services:
   - type: web
+    region: singapore 
     name: mysite
     runtime: ruby
     plan: free
