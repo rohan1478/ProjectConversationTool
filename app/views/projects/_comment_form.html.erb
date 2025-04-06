@@ -5,7 +5,7 @@
   
         <div class="mb-4">
           <%= event_form.label :content, "Your Comment", class: "block text-sm font-medium text-gray-700" %>
-          <%= event_form.text_area :content, rows: 4, placeholder: "Write something...", class: "mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500" %>
+          <%= event_form.text_area :content, rows: 4, placeholder: "Write something...", class: "mt-1 block w-full px-4 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-2 focus:ring-indigo-500", required: true %>
           <%= event_form.hidden_field :event_type, value: "comment" %>
           <%= event_form.hidden_field :user_id, value: current_user.id %>
 

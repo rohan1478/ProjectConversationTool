@@ -26,8 +26,14 @@
 
   <body>
     <main class='bg-indigo-25 min-h-screen'>
-       <p class="notice"><%= notice %></p>
-       <p class="alert"><%= alert %></p>
+    <% flash.each do |type, message| %>
+      <div
+        data-controller="flash"
+        class="flash-message px-4 py-3 mb-4 text-white 
+        <%= type == 'alert' ? 'bg-red-500' : 'bg-green-500' %>">
+        <%= message %>
+      </div>
+    <% end %>
     <%= render 'shared/navbar' %>
       <%= yield %>
     </main>
