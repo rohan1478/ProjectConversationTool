@@ -25,8 +25,13 @@ class ProjectsController < ApplicationController
       current_status = @project.status
 
       if @project.update(project_params)
-        record_update_status(current_status)
-        redirect_to @project, notice: "Project was successfully updated."
+        track_update_status(current_status)
+
+        if project_params["project_events_attributes"].present?
+          redirect_to @project, notice: "Comment added successfully."
+        else
+          redirect_to @project, notice: "Project was successfully updated."
+        end
       else
         render :edit, status: :unprocessable_entity
       end
@@ -39,7 +44,7 @@ class ProjectsController < ApplicationController
 
     private
 
-    def record_update_status(current_status)
+    def track_update_status(current_status)
       return if @project.status == current_status
 
       @project.project_events.create!(old_status: current_status, new_status: project_params[:status], event_type: "status_change", user_id: current_user.id)
