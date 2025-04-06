@@ -26,12 +26,12 @@ class ProjectsController < ApplicationController
 
       if @project.update(project_params)
         track_update_status(current_status)
-				
-				if project_params['project_events_attributes'].present?
-					redirect_to @project, notice: "Comment added successfully."
-				else
-        	redirect_to @project, notice: "Project was successfully updated."
-				end
+
+        if project_params["project_events_attributes"].present?
+          redirect_to @project, notice: "Comment added successfully."
+        else
+          redirect_to @project, notice: "Project was successfully updated."
+        end
       else
         render :edit, status: :unprocessable_entity
       end
