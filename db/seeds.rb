@@ -1,10 +1,3 @@
-puts "Creating super admin"
-user = User.create!(
-      email: 'admin@example.com',
-      password: 'admin123',
-      password_confirmation: 'admin123'
-    )
-
   # Create 10 users using FactoryBot
   2.times do
     user = FactoryBot.create(:user)
