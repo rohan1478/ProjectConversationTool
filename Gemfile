@@ -13,7 +13,7 @@ gem "factory_bot_rails"
 gem "faker"
 gem "tailwindcss-ruby"
 gem "tailwindcss-rails"
-gem "font-awesome-sass", "~> 6.0.0"
+gem "font-awesome-sass", "~> 6.7.2"
 gem "devise"
 gem "tzinfo-data", platforms: %i[ windows jruby ]
 gem "solid_cache"
